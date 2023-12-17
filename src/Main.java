@@ -43,7 +43,7 @@ public class Main {
         for (int c = 1; c < data.length; c++) {
             var pieces = data[c].split(";"); // method split - щоб "побити" строку на підстроку
             LandTrans transport = null;
-            switch (pieces[0].toLowerCase()) { //добавили эту строку в игнор - непонятно, в лекции был пример с enum
+            switch (pieces[0].toLowerCase()) { 
                 case "bus":
                     transport = new Bus(pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
                     break;
