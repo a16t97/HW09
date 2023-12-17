@@ -1,0 +1,4 @@
+﻿type;name;capacity;endingYear;available
+bus;bohdan;54;2027;true
+car;bmw;6;2028;true
+bike;lightning;2;2020;false
