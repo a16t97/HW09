@@ -54,7 +54,7 @@ public class Main {
                     transport = new Bike(pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
                     break;
             }
-            System.out.println("We have following car: " + transport);
+            System.out.println("We have the next car: " + transport);
         }
     }
 }
