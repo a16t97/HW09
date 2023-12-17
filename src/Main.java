@@ -45,13 +45,13 @@ public class Main {
             LandTrans transport = null;
             switch (pieces[0].toLowerCase()) { //добавили эту строку в игнор - непонятно, в лекции был пример с enum
                 case "bus":
-                    transport = new Bus(pieces[0], pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
+                    transport = new Bus(pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
                     break;
                 case "car":
-                    transport = new Car(pieces[0], pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
+                    transport = new Car(pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
                     break;
                 case "bike":
-                    transport = new Bike(pieces[0], pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
+                    transport = new Bike(pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
                     break;
             }
             System.out.println("We have following car: " + transport);

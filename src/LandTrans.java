@@ -1,25 +1,14 @@
 public class LandTrans {
-
-        private String type;
         private String name;
         private int capacity;
         private int yearEnding;
         private boolean isAvailable;
 
-        public LandTrans(String type, String name, int capacity, int yearEnding, boolean isAvailable) {
-            this.type = type;
+        public LandTrans(String name, int capacity, int yearEnding, boolean isAvailable) {
             this.name = name;
             this.capacity = capacity;
             this.yearEnding = yearEnding;
             this.isAvailable = isAvailable;
-        }
-
-        public String getType() {
-            return type;
-        }
-
-        public void setType(String type) {
-            this.type = type;
         }
 
         public String getName() {
@@ -57,7 +46,6 @@ public class LandTrans {
         @Override
         public String toString() {
             return "LandTrans{" +
-                    "type='" + type + '\'' +
                     ", name='" + name + '\'' +
                     ", capacity=" + capacity +
                     ", yearEnding=" + yearEnding +
