@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class Bus {
+public class Bus extends LandTrans {
+    public Bus(String type, String name, int capacity, int yearEnding, boolean isAvailable) {
+        super(type, name, capacity, yearEnding, isAvailable);
+    }
 }

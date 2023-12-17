@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class Car {
+public class Car extends LandTrans{
+    public Car(String type, String name, int capacity, int yearEnding, boolean isAvailable) {
+        super(type, name, capacity, yearEnding, isAvailable);
+    }
 }
