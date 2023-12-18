@@ -19,12 +19,11 @@ public class Main {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+        
         var br = new BufferedReader(reader);
-
         String newLine;
 
         try{
-
             while ((newLine = br.readLine()) != null){
                 data.add(newLine);
             }
@@ -32,7 +31,6 @@ public class Main {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
         return Arrays.copyOf(data.toArray(), data.size(), String[].class);
     }
 
@@ -53,6 +51,9 @@ public class Main {
                 case "bike":
                     transport = new Bike(pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
                     break;
+                default:
+                    transport = new LandTrans(pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
+                break;
             }
             System.out.println("We have the next car: " + transport);
         }
