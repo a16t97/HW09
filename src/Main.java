@@ -19,7 +19,7 @@ public class Main {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        
+
         var br = new BufferedReader(reader);
         String newLine;
 
@@ -37,11 +37,14 @@ public class Main {
     public static void main(String[] args) {
         String[] data = readFileUsingBufferedReader(fileName);
         System.out.println(data);
+        createTransportObject(data);
+    }
 
+        private static void createTransportObject(String[] data) {
         for (int c = 1; c < data.length; c++) {
             var pieces = data[c].split(";"); // method split - щоб "побити" строку на підстроку
             LandTrans transport = null;
-            switch (pieces[0].toLowerCase()) { 
+            switch (pieces[0].toLowerCase()) {
                 case "bus":
                     transport = new Bus(pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
                     break;
@@ -53,7 +56,7 @@ public class Main {
                     break;
                 default:
                     transport = new LandTrans(pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
-                break;
+                    break;
             }
             System.out.println("We have the next car: " + transport);
         }
