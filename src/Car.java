@@ -1,8 +1,9 @@
 public class Car extends LandTrans{
     private type type;
-    public Car(String name, int capacity, int yearEnding, boolean isAvailable) {
-        super(name, capacity, yearEnding, isAvailable);
-        type = type.car;
+
+    public Car(int id, String name, int capacity, int yearEnding, boolean isAvailable) {
+        super(id, name, capacity, yearEnding, isAvailable);
+        this.type = type.car;
     }
 
     @Override

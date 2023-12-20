@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     private static final String fileName = "resources/transport.csv";
 
@@ -44,18 +42,18 @@ public class Main {
         for (int c = 1; c < data.length; c++) {
             var pieces = data[c].split(";"); // method split - щоб "побити" строку на підстроку
             LandTrans transport = null;
-            switch (pieces[0].toLowerCase()) {
+            switch (pieces[1].toLowerCase()) {
                 case "bus":
-                    transport = new Bus(pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
+                    transport = new Bus(Integer.parseInt(pieces[0]), pieces[2], Integer.parseInt(pieces[3]), Integer.parseInt(pieces[4]), Boolean.parseBoolean(pieces[5]));
                     break;
                 case "car":
-                    transport = new Car(pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
+                    transport = new Car(Integer.parseInt(pieces[0]), pieces[2], Integer.parseInt(pieces[3]), Integer.parseInt(pieces[4]), Boolean.parseBoolean(pieces[5]));
                     break;
                 case "bike":
-                    transport = new Bike(pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
+                    transport = new Bike(Integer.parseInt(pieces[0]), pieces[2], Integer.parseInt(pieces[3]), Integer.parseInt(pieces[4]), Boolean.parseBoolean(pieces[5]));
                     break;
                 default:
-                    transport = new LandTrans(pieces[1], Integer.parseInt(pieces[2]), Integer.parseInt(pieces[3]), Boolean.parseBoolean(pieces[4]));
+                    transport = new LandTrans(Integer.parseInt(pieces[0]), pieces[2], Integer.parseInt(pieces[3]), Integer.parseInt(pieces[4]), Boolean.parseBoolean(pieces[5]));
                     break;
             }
             System.out.println("We have the next car: " + transport);
