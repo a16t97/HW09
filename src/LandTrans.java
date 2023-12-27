@@ -63,5 +63,7 @@ public class LandTrans {
                 ", isAvailable=" + isAvailable +
                 '}';
     }
-}
 
+    public void add(LandTrans transport) {
+    }
+}

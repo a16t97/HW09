@@ -1,4 +1,4 @@
-public class Car extends LandTrans{
+public class Car extends LandTrans {
     private type type;
 
     public Car(int id, String name, int capacity, int yearEnding, boolean isAvailable) {
