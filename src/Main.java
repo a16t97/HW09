@@ -67,9 +67,11 @@ public class Main {
     interface MyFunctionalInterface {
         void doSomething();
     }
+    
     static MyFunctionalInterface myFunctionalInterface = () -> {
         System.out.println("Hello!");
     };
+    
     public static void main(String[] args) throws IOException{
         List<LandTrans> trans = new Vector<>();
         String[] data = readFileUsingBufferedReader(fileName);
