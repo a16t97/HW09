@@ -67,6 +67,7 @@ public class Main {
     interface MyFunctionalInterface {
         void doSomething();
     }
+
     static MyFunctionalInterface myFunctionalInterface = () -> {
         System.out.println("Hello!");
     };
@@ -80,7 +81,7 @@ public class Main {
         Stream<LandTrans> stream2 = trans.stream();
 
         stream
-                .sorted((d1, d2) -> (d2.getCapacity() - d1.getCapacity()))
+                .sorted((d1, d2) -> (int) (d2.getCapacity() - d1.getCapacity()))
                 .skip(5)
                 .limit(21)
                 .forEach(System.out::println);
@@ -102,5 +103,6 @@ public class Main {
                 .forEach(System.out::println);
 
 //        myFunctionalInterface.doSomething();
+
     }
 }
