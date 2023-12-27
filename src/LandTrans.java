@@ -45,7 +45,7 @@ public class LandTrans {
         this.yearEnding = yearEnding;
     }
 
-    public boolean isAvailable() {
+    public boolean isAvailable(boolean b) {
         return isAvailable;
     }
 
@@ -63,5 +63,7 @@ public class LandTrans {
                 ", isAvailable=" + isAvailable +
                 '}';
     }
-}
 
+    public void add(LandTrans transport) {
+    }
+}
