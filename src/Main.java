@@ -2,16 +2,21 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 import java.util.stream.Stream;
 
+import static java.time.temporal.ChronoUnit.DAYS;
+
 public class Main {
     private static final String fileName = "resources/transport.csv";
 
     static String[] readFileUsingBufferedReader(String filename) {
+
         ArrayList<String> data = new ArrayList<String>();
         FileReader reader;
 
@@ -73,9 +78,16 @@ public class Main {
     };
 
     public static void main(String[] args) throws IOException{
+        var importStart = System.currentTimeMillis();
         List<LandTrans> trans = new Vector<>();
         String[] data = readFileUsingBufferedReader(fileName);
+        var importEnd = System.currentTimeMillis() - importStart;
+
+        var createStart = System.currentTimeMillis();
         trans = createTransportObject(data);
+        var createEnd = System.currentTimeMillis() - createStart;
+
+        var actStreamStart = System.currentTimeMillis();
         Stream<LandTrans> stream = trans.stream();
         Stream<LandTrans> stream1 = trans.stream();
         Stream<LandTrans> stream2 = trans.stream();
@@ -102,7 +114,27 @@ public class Main {
                 .limit(21)
                 .forEach(System.out::println);
 
+        var actStreamEnd = System.currentTimeMillis() - actStreamStart;
+
 //        myFunctionalInterface.doSomething();
 
+        // Вимірювання тривалості
+        System.out.println(" "); // щоб була відстань між даними
+        System.out.println("***"); // щоб була відстань між даними
+        System.out.println("Час обробки даних та створення об'єтів: " + createEnd + " мілісекунд");
+        System.out.println("Час імпорту даних з файлу: " + importEnd + " мілісекунд");
+        System.out.println("Час дії з 3 потоками: " + actStreamEnd + " мілісекунд");
+
+        // Вимірювання к-сть днів між датами:
+        System.out.println(" "); // щоб була відстань між даними
+        System.out.println("***"); // щоб була відстань між даними
+
+        LocalDateTime dateBefore = LocalDateTime.of(2023, Month.NOVEMBER, 17, 10, 30);
+        LocalDateTime dateAfter = LocalDateTime.of(2024, Month.FEBRUARY, 11, 10, 20);
+        long daysBetween = DAYS.between(dateBefore, dateAfter);
+
+        System.out.println("Дата до 1 грудня 2023: " + dateBefore);
+        System.out.println("Дата після 1 лютого 2024: " + dateAfter);
+        System.out.println("Різниця у днях: " + daysBetween + " днів.");
     }
 }
