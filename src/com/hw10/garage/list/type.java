@@ -1,4 +1,4 @@
-package com.hw10.exam.garage.list;
+package com.hw10.garage.list;
 
 public enum type {
     car,

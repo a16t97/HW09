@@ -1,4 +1,4 @@
-package com.hw10.exam.garage;
+package com.hw10.garage;
 
 public class LandTrans {
     private int id;

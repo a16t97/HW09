@@ -1,7 +1,7 @@
-import com.hw10.exam.garage.transport.Bike;
-import com.hw10.exam.garage.transport.Bus;
-import com.hw10.exam.garage.transport.Car;
-import com.hw10.exam.garage.LandTrans;
+import com.hw10.garage.transport.Bike;
+import com.hw10.garage.transport.Bus;
+import com.hw10.garage.transport.Car;
+import com.hw10.garage.LandTrans;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

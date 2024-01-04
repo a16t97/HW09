@@ -1,7 +1,7 @@
-package com.hw10.exam.garage.transport;
+package com.hw10.garage.transport;
 
-import com.hw10.exam.garage.LandTrans;
-import com.hw10.exam.garage.list.type;
+import com.hw10.garage.LandTrans;
+import com.hw10.garage.list.type;
 
 public class Bus extends LandTrans {
     private type type;
