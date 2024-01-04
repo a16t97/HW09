@@ -1,7 +1,7 @@
+import com.hw10.garage.LandTrans;
 import com.hw10.garage.transport.Bike;
 import com.hw10.garage.transport.Bus;
 import com.hw10.garage.transport.Car;
-import com.hw10.garage.LandTrans;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -9,10 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.Month;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Vector;
+import java.util.*;
 import java.util.stream.Stream;
 
 import static java.time.temporal.ChronoUnit.DAYS;
@@ -127,9 +124,14 @@ public class Main {
         System.out.println(" "); // щоб була відстань між даними
         System.out.println("***"); // щоб була відстань між даними
 
-        System.out.println("Час обробки даних та створення об'єтів: " + createEnd + " мілісекунд");
-        System.out.println("Час імпорту даних з файлу: " + importEnd + " мілісекунд");
-        System.out.println("Час дії з 3 потоками: " + actStreamEnd + " мілісекунд");
+        Map<String, Long> executionTimes = new LinkedHashMap<>();
+        executionTimes.put("Час імпорту даних з файлу", importEnd);
+        executionTimes.put("Час обробки даних та створення об'єктів", createEnd);
+        executionTimes.put("Час дії з 3 потоками", actStreamEnd);
+
+        executionTimes.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue())
+                .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue() + " мілісекунд"));
 
         // Вимірювання к-сть днів між датами:
         System.out.println(" "); // щоб була відстань між даними
