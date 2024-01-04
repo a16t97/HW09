@@ -1,4 +1,4 @@
-﻿id;type;name;capacity;yearEnding;available
+﻿id;com.hw10.exam.garage.list.type;name;capacity;yearEnding;available
 1;bus;Mercedes;40;2040;true
 2;car;Toyota;5;2005;false
 3;bike;Honda;1;2022;false

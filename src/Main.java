@@ -1,3 +1,8 @@
+import com.hw10.exam.garage.transport.Bike;
+import com.hw10.exam.garage.transport.Bus;
+import com.hw10.exam.garage.transport.Car;
+import com.hw10.exam.garage.LandTrans;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -121,6 +126,7 @@ public class Main {
         // Вимірювання тривалості
         System.out.println(" "); // щоб була відстань між даними
         System.out.println("***"); // щоб була відстань між даними
+
         System.out.println("Час обробки даних та створення об'єтів: " + createEnd + " мілісекунд");
         System.out.println("Час імпорту даних з файлу: " + importEnd + " мілісекунд");
         System.out.println("Час дії з 3 потоками: " + actStreamEnd + " мілісекунд");

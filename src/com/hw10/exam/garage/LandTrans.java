@@ -1,3 +1,5 @@
+package com.hw10.exam.garage;
+
 public class LandTrans {
     private int id;
     private String name;
@@ -55,7 +57,7 @@ public class LandTrans {
 
     @Override
     public String toString() {
-        return "LandTrans{" +
+        return "com.hw10.exam.garage.LandTrans{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", capacity=" + capacity +
